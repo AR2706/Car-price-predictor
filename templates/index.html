@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Car Price Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Car Price Prediction</h1>
+        <form action="/predict" method="post">
+            <input type="number" name="present_price" placeholder="Present Price (in Lakhs)" required>
+            <input type="number" name="kms_driven" placeholder="Kilometers Driven" required>
+            <input type="number" name="fuel_type" placeholder="Fuel Type (0:Petrol, 1:Diesel, 2:CNG)" required>
+            <input type="number" name="seller_type" placeholder="Seller Type (0:Dealer, 1:Individual)" required>
+            <input type="number" name="transmission" placeholder="Transmission (0:Manual, 1:Auto)" required>
+            <input type="number" name="owner" placeholder="Number of Previous Owners" required>
+            <input type="number" name="car_age" placeholder="Age of Car (in years)" required>
+            <button type="submit">Predict Price</button>
+        </form>
+        <h3>{{ prediction_text }}</h3>
+    </div>
+</body>
+</html>
