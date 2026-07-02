@@ -1,9 +1,11 @@
 # app.py
+import os
 from flask import Flask, render_template, request
 import pickle
 import numpy as np
 
 app = Flask(__name__)
+model_path = os.path.join(os.path.dirname(__file__), 'car_price_model.pkl')
 
 # Load the saved Random Forest model
 with open('car_price_model.pkl', 'rb') as file:
